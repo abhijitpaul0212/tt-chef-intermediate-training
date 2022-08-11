@@ -15,6 +15,22 @@ describe 'apache::default' do
     it 'converges successfully' do
       expect { chef_run }.to_not raise_error
     end
+
+    it 'installs the apache2 package' do
+      expect(chef_run).to install_package('apache2')
+    end
+
+    it 'starts apache2' do
+      expect(chef_run).to start_service('apache2')
+    end
+    
+    it 'starts apache2' do
+      expect(chef_run).to enable_service('apache2')
+    end
+
+    it 'creates the index file' do
+      expect(chef_run).to render_file('/var/www/html/index.html').with_content('<h1>Welcome Home!</h1>')
+    end
   end
 
   context 'When all attributes are default, on CentOS 7' do
