@@ -1,4 +1,10 @@
 {
-    "id": "abhijit",
-    "password": "$1$xiqu4jhU$yZUZKMS4u8lZcH6obu5/h1"
+  "id": "abhijit",
+  "password": {
+    "encrypted_data": "dlanlX9IwsdtFIjQLkKRs/7YorTTBLb59I1mkBOb5U/8kwLdLbxKl8SfV5bh\nXXHI6fHHFTk=\n",
+    "iv": "toW8u15XmptUS7hh\n",
+    "auth_tag": "IXU5rnnv0h0HNFCiHHsfAQ==\n",
+    "version": 3,
+    "cipher": "aes-256-gcm"
+  }
 }

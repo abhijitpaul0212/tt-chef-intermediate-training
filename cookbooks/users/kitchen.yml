@@ -42,6 +42,7 @@ platforms:
 suites:
   - name: default
     data_bags_path: '../../data_bags'
+    encrypted_data_bag_secret_key_path: '../../.my_secret'
     sudo: true
     verifier:
       inspec_tests:
