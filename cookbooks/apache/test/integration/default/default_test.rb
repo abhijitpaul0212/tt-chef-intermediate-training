@@ -29,3 +29,10 @@ end
 describe command('curl http://localhost:8080') do
   its(:stdout) { should match(/Welcome admins/) }
 end
+
+plugin_directory = '/opt/kitchen/ohai/cookbook_plugins/apache'
+
+describe command("/opt/chef/bin/ohai -d #{plugin_directory} ohaicustomplugin") do
+  its(:stdout) { should match(/operating_system/) }
+  its(:stdout) { should match(/internal_hostname/) }
+end
