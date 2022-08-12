@@ -6,12 +6,24 @@ describe port(80) do
   it { should be_listening }
 end
 
-describe file('/var/www/html/index.html') do
+# describe file('/var/www/html/index.html') do
+#   it { should exist }
+# end
+
+describe file("/srv/apache/admins/html/index.html") do
   it { should exist }
 end
 
+describe file("/srv/apache/users/html/index.html") do
+  it { should exist }
+end
+
+# describe command('curl http://localhost') do
+#   its(:stdout) { should match(/Welcome Home!/) }
+# end
+
 describe command('curl http://localhost') do
-  its(:stdout) { should match(/Welcome Home!/) }
+  its(:stdout) { should match(/Welcome users/) }
 end
 
 describe command('curl http://localhost:8080') do
